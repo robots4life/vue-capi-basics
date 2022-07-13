@@ -139,3 +139,20 @@ const increaseCounter = (amount) => {
 	counterData.count += amount;
 };
 ```
+
+#### Access The Event Object On The Button
+
+Use `@event` as a second parameter to the `increaseCounter` method
+
+```html
+<button @click="decreaseCounter(2, $event)" class="btn">- -</button>
+```
+
+Log the Event Object in the method
+
+```js
+const increaseCounter = (amount, event) => {
+	counterData.count += amount;
+	console.log(event);
+};
+```
