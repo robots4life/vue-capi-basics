@@ -59,6 +59,8 @@ const resetCounter = () => {
 .counter {
 	font-size: 2rem;
 	padding: 2rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 hr {
 	margin-top: 2rem;
