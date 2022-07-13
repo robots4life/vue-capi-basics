@@ -156,3 +156,5 @@ const increaseCounter = (amount, event) => {
 	console.log(event);
 };
 ```
+
+<img src="images/lesson-20-log-the-event-object-on-the-counter-methods.png">
