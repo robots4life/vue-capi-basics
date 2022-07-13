@@ -3,10 +3,11 @@
 		<h1>Home</h1>
 
 		<div>
-			<button class="btn">-</button>
+			<button @click="decreaseCounter" class="btn">-</button>
 			<span class="counter">{{ counter }}</span>
-			<button class="btn">+</button>
+			<button @click="increaseCounter" class="btn">+</button>
 		</div>
+		<button @click="resetCounter" class="btn">Reset Counter</button>
 	</div>
 </template>
 
@@ -17,6 +18,17 @@ export default {
 		return {
 			counter: 10
 		};
+	},
+	methods: {
+		increaseCounter() {
+			this.counter++;
+		},
+		decreaseCounter() {
+			this.counter--;
+		},
+		resetCounter() {
+			this.counter = 0;
+		}
 	}
 };
 </script>
