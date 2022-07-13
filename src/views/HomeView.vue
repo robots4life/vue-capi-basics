@@ -36,6 +36,14 @@ export default {
 -->
 
 <!-- Composition API -->
+<script>
+export default {
+	setup() {
+		// everything will go inside this setup() function
+		// later we will use the superior script setup
+	}
+};
+</script>
 <style>
 .home {
 	text-align: center;
