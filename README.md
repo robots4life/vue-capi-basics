@@ -34,7 +34,7 @@ npm run build
 npm run lint
 ```
 
-### Lesson 15 - Two Way Data Binding
+### Lesson 16 - Two Way Data Binding
 
 <img src="images/lesson-15-2-way-data-binding-v-model-counterTitle.png" />
 
