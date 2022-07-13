@@ -56,3 +56,24 @@ npm run lint
 	const counterTitle = ref('My Counter');
 </script>
 ```
+
+### Lesson 17 - Reactive Objects
+
+Let's say we want to store the `counter` and `counterTitle` in a <strong> Reactive Object </strong> since the data is <strong>RELATED TO EACH OTHER</strong>.
+
+Before
+
+```js
+const counter = ref(0);
+
+const counterTitle = ref('My Counter');
+```
+
+Setup Reactive Object
+
+```js
+const counterData = reactive({
+	count: 0,
+	title: 'My Counter'
+});
+```
