@@ -12,6 +12,7 @@
 </template>
 
 <!-- Options API -->
+<!--
 <script>
 export default {
 	data() {
@@ -32,7 +33,9 @@ export default {
 	}
 };
 </script>
+-->
 
+<!-- Composition API -->
 <style>
 .home {
 	text-align: center;
