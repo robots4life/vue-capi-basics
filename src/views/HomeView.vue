@@ -2,6 +2,8 @@
 	<div class="home">
 		<h1>Home</h1>
 
+		<h2>{{ appTitle }}</h2>
+
 		<h3>{{ counterData.title }}</h3>
 		<hr />
 		<div>
@@ -24,6 +26,10 @@
 <!-- There is no need to return the methods or values any more as well ;) -->
 <script setup>
 import { reactive } from 'vue';
+
+// not all data needs to be reactive
+// PERFORMANCE of the APP is IMPROVED for any data variables that are non reactive
+const appTitle = 'My Amazing Counter App';
 
 const counterData = reactive({
 	count: 0,
