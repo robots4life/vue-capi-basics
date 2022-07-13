@@ -178,3 +178,10 @@ const oddOrEven = computed(() => {
 	}
 });
 ```
+
+### Lesson 23 - Vue Filters Are No Longer A Thing
+
+https://v3-migration.vuejs.org/breaking-changes/filters.html
+
+To achieve the same behaviour or having a "global filter" we are later going to learn about Vue Composables.  
+https://vuejs.org/guide/reusability/composables.html
