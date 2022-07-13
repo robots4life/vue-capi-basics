@@ -121,3 +121,21 @@ const resetCounter = () => {
 };
 </script>
 ```
+
+### Lesson 20 - Pass Parameters To Methods
+
+<strong>Add</strong> a parameter i.e. `(1)` and `(2)` to the `increaseCounter` method
+
+````html
+<button @click="increaseCounter(1)" class="btn">+</button>
+<button @click="increaseCounter(2)" class="btn">++</button>
+```
+````
+
+<strong>Receive</strong> the parameter `amount` in the function
+
+```js
+const increaseCounter = (amount) => {
+	counterData.count += amount;
+};
+```

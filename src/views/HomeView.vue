@@ -9,7 +9,8 @@
 		<div>
 			<button @click="decreaseCounter" class="btn">-</button>
 			<span class="counter">{{ counterData.count }}</span>
-			<button @click="increaseCounter" class="btn">+</button>
+			<button @click="increaseCounter(1)" class="btn">+</button>
+			<button @click="increaseCounter(2)" class="btn">++</button>
 		</div>
 		<hr />
 		<button @click="resetCounter" class="btn">Reset Counter</button>
@@ -36,8 +37,8 @@ const counterData = reactive({
 	title: 'My Counter'
 });
 
-const increaseCounter = () => {
-	counterData.count++;
+const increaseCounter = (amount) => {
+	counterData.count += amount;
 };
 
 const decreaseCounter = () => {
