@@ -82,7 +82,23 @@ export default {
 
 <!-- https://vuejs.org/api/sfc-script-setup.html -->
 <!-- SCRIPT SETUP -->
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+
+const counter = ref(0);
+
+const increaseCounter = () => {
+	counter.value++;
+};
+
+const decreaseCounter = () => {
+	counter.value--;
+};
+
+const resetCounter = () => {
+	counter.value = 0;
+};
+</script>
 <style>
 .home {
 	text-align: center;
