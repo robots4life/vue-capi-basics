@@ -258,6 +258,9 @@ watch(
 );
 ```
 
+<img src="images/lesson-23-deep-watcher-shows-oldCount-and-newCount.png">
+<br>
+<br>
 ...and it turns out this is a
 
 ### Deep Watcher
