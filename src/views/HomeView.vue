@@ -36,7 +36,7 @@ export default {
 -->
 
 <!-- Composition API -->
-<script>
+<!-- <script>
 import { ref } from 'vue';
 
 export default {
@@ -78,7 +78,11 @@ export default {
 		};
 	}
 };
-</script>
+</script> -->
+
+<!-- https://vuejs.org/api/sfc-script-setup.html -->
+<!-- SCRIPT SETUP -->
+<script setup></script>
 <style>
 .home {
 	text-align: center;
