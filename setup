@@ -1,0 +1,7 @@
+npm install --save-dev prettier --verbose
+
+npm install --save-dev eslint eslint-plugin-vue --verbose
+
+npm install eslint-config-prettier --save-dev --verbose
+
+npm install  env-cmd --save-dev --verbose
