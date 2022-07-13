@@ -77,3 +77,47 @@ const counterData = reactive({
 	title: 'My Counter'
 });
 ```
+
+After
+
+```html
+<h3>{{ counterData.title }}</h3>
+```
+
+```html
+<span class="counter">{{ counterData.count }}</span>
+```
+
+```html
+<input v-model="counterData.title" type="text" />
+```
+
+```js
+<script setup>
+import { reactive } from 'vue';
+
+// const counter = ref(0); replace with reactive object
+
+// const counterTitle = ref('My Counter'); replace with reactive object
+
+const counterData = reactive({
+	count: 0,
+	title: 'My Counter'
+});
+
+const increaseCounter = () => {
+	// counter.value++; replace with reactive object
+	counterData.count++;
+};
+
+const decreaseCounter = () => {
+	// counter.value--; replace with reactive object
+	counterData.count--;
+};
+
+const resetCounter = () => {
+	// counter.value = 0; replace with reactive object
+	counterData.count = 0;
+};
+</script>
+```

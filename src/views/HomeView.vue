@@ -23,11 +23,11 @@
 <!-- SCRIPT SETUP -->
 <!-- There no need to return the methods or values any more as well ;) -->
 <script setup>
-import { reactive, ref } from 'vue';
+import { reactive } from 'vue';
 
-// const counter = ref(0);
+// const counter = ref(0); replace with reactive object
 
-// const counterTitle = ref('My Counter');
+// const counterTitle = ref('My Counter'); replace with reactive object
 
 const counterData = reactive({
 	count: 0,
@@ -35,17 +35,17 @@ const counterData = reactive({
 });
 
 const increaseCounter = () => {
-	// counter.value++;
+	// counter.value++; replace with reactive object
 	counterData.count++;
 };
 
 const decreaseCounter = () => {
-	// counter.value--;
+	// counter.value--; replace with reactive object
 	counterData.count--;
 };
 
 const resetCounter = () => {
-	// counter.value = 0;
+	// counter.value = 0; replace with reactive object
 	counterData.count = 0;
 };
 </script>
