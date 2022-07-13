@@ -7,10 +7,11 @@
 		<h3>{{ counterData.title }}</h3>
 		<hr />
 		<div>
-			<button @click="decreaseCounter" class="btn">-</button>
+			<button @click="decreaseCounter(2)" class="btn">- -</button>
+			<button @click="decreaseCounter(1)" class="btn">-</button>
 			<span class="counter">{{ counterData.count }}</span>
 			<button @click="increaseCounter(1)" class="btn">+</button>
-			<button @click="increaseCounter(2)" class="btn">++</button>
+			<button @click="increaseCounter(2)" class="btn">+ +</button>
 		</div>
 		<hr />
 		<button @click="resetCounter" class="btn">Reset Counter</button>
@@ -41,8 +42,8 @@ const increaseCounter = (amount) => {
 	counterData.count += amount;
 };
 
-const decreaseCounter = () => {
-	counterData.count--;
+const decreaseCounter = (amount) => {
+	counterData.count -= amount;
 };
 
 const resetCounter = () => {
