@@ -179,7 +179,7 @@ const oddOrEven = computed(() => {
 });
 ```
 
-### Lesson 23 - Vue Filters Are No Longer A Thing
+### Lesson 22 - Vue Filters Are No Longer A Thing
 
 https://v3-migration.vuejs.org/breaking-changes/filters.html
 
