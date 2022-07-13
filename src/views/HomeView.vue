@@ -11,6 +11,11 @@
 		</div>
 		<hr />
 		<button @click="resetCounter" class="btn">Reset Counter</button>
+		<hr />
+		<div class="edit">
+			<h4>Edit counter title:</h4>
+			<input type="text" />
+		</div>
 	</div>
 </template>
 
@@ -49,5 +54,14 @@ const resetCounter = () => {
 hr {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
+}
+.edit input {
+	margin-top: 1rem;
+	height: 3rem;
+	font-size: 3rem;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 </style>
