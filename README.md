@@ -33,3 +33,26 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Lesson 15 - Two Way Data Binding
+
+<img src="images/lesson-15-2-way-data-binding-v-model-counterTitle.png" />
+
+```html
+<h3>{{ counterTitle }}</h3>
+```
+
+```html
+<div class="edit">
+	<h4>Edit counter title:</h4>
+	<input v-model="counterTitle" type="text" />
+</div>
+```
+
+```html
+<script setup>
+	import { ref } from 'vue';
+
+	const counterTitle = ref('My Counter');
+</script>
+```

@@ -14,7 +14,7 @@
 		<hr />
 		<div class="edit">
 			<h4>Edit counter title:</h4>
-			<input type="text" />
+			<input v-model="counterTitle" type="text" />
 		</div>
 	</div>
 </template>
@@ -63,5 +63,6 @@ hr {
 	padding-bottom: 3rem;
 	padding-left: 1rem;
 	padding-right: 1rem;
+	text-align: center;
 }
 </style>
