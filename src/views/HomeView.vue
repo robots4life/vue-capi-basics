@@ -55,9 +55,16 @@ export default {
 		//
 		// click on ref to auto import the module like seen here => https://youtu.be/V-kxBWcPJfo?t=799
 		const counter = ref(0);
+		//
+		// create NAMED functions for the increaseCounter, decreaseCounter and resetCounter METHODS and RETURN them finally
+		//
+		const increaseCounter = function () {
+			counter.value++;
+		};
 
 		return {
-			counter
+			counter,
+			increaseCounter
 		};
 	}
 };
