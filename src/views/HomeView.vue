@@ -82,6 +82,7 @@ export default {
 
 <!-- https://vuejs.org/api/sfc-script-setup.html -->
 <!-- SCRIPT SETUP -->
+<!-- There no need to return the methods or values any more as well ;) -->
 <script setup>
 import { ref } from 'vue';
 
