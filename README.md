@@ -36,7 +36,7 @@ npm run lint
 
 ### Lesson 16 - Two Way Data Binding
 
-<img src="images/lesson-15-2-way-data-binding-v-model-counterTitle.png" />
+<img src="images/lesson-16-2-way-data-binding-v-model-counterTitle.png" />
 
 ```html
 <h3>{{ counterTitle }}</h3>
