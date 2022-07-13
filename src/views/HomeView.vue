@@ -58,15 +58,15 @@ export default {
 		//
 		// create NAMED functions for the increaseCounter, decreaseCounter and resetCounter METHODS and RETURN them finally
 		//
-		const increaseCounter = function () {
+		const increaseCounter = () => {
 			counter.value++;
 		};
 
-		const decreaseCounter = function () {
+		const decreaseCounter = () => {
 			counter.value--;
 		};
 
-		const resetCounter = function () {
+		const resetCounter = () => {
 			counter.value = 0;
 		};
 
