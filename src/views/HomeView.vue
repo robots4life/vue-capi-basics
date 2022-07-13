@@ -66,10 +66,15 @@ export default {
 			counter.value--;
 		};
 
+		const resetCounter = function () {
+			counter.value = 0;
+		};
+
 		return {
 			counter,
 			increaseCounter,
-			decreaseCounter
+			decreaseCounter,
+			resetCounter
 		};
 	}
 };
