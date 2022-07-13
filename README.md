@@ -158,3 +158,23 @@ const increaseCounter = (amount, event) => {
 ```
 
 <img src="images/lesson-20-log-the-event-object-on-the-counter-methods.png">
+
+### Lesson 21 - Computed Properties
+
+<strong>Computed Properties are properties which are usually generated based on reactive data which is cached and only updated when their dependencies change.</strong>
+
+In this example the Computer Property `oddOrEven` is based on the computation/calculation of the value of `counterData.count` and the condition in the `computed()` method.
+
+```html
+<h4>The Counter Now Shows An {{ oddOrEven }} Number</h4>
+```
+
+```js
+const oddOrEven = computed(() => {
+	if (counterData.count % 2 === 0) {
+		return 'Even';
+	} else {
+		return 'Odd';
+	}
+});
+```

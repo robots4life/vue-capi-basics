@@ -5,6 +5,8 @@
 		<h2>{{ appTitle }}</h2>
 
 		<h3>{{ counterData.title }}</h3>
+
+		<h4>The Counter Now Shows An {{ oddOrEven }} Number</h4>
 		<hr />
 		<div>
 			<button @click="decreaseCounter(2, $event)" class="btn">- -</button>
@@ -27,7 +29,7 @@
 <!-- SCRIPT SETUP -->
 <!-- There is no need to return the methods or values any more as well ;) -->
 <script setup>
-import { reactive } from 'vue';
+import { computed, reactive } from 'vue';
 
 // not all data needs to be reactive
 // PERFORMANCE of the APP is IMPROVED for any data variables that are non reactive
@@ -36,6 +38,16 @@ const appTitle = 'My Amazing Counter App';
 const counterData = reactive({
 	count: 0,
 	title: 'My Counter'
+});
+
+// Computed Property "oddOrEven" is based on the counterData.count value
+// hence the name, it computes the new value based on the value of a given variable
+const oddOrEven = computed(() => {
+	if (counterData.count % 2 === 0) {
+		return 'Even';
+	} else {
+		return 'Odd';
+	}
 });
 
 const increaseCounter = (amount, event) => {
