@@ -62,9 +62,14 @@ export default {
 			counter.value++;
 		};
 
+		const decreaseCounter = function () {
+			counter.value--;
+		};
+
 		return {
 			counter,
-			increaseCounter
+			increaseCounter,
+			decreaseCounter
 		};
 	}
 };
