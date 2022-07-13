@@ -29,7 +29,7 @@
 <!-- SCRIPT SETUP -->
 <!-- There is no need to return the methods or values any more as well ;) -->
 <script setup>
-import { computed, reactive } from 'vue';
+import { computed, reactive, watch } from 'vue';
 
 // not all data needs to be reactive
 // PERFORMANCE of the APP is IMPROVED for any data variables that are non reactive
@@ -49,6 +49,15 @@ const oddOrEven = computed(() => {
 		return 'Odd';
 	}
 });
+
+// Watcher
+watch(
+	() => counterData.count,
+	(newCount, oldCount) => {
+		console.log('newCount : ', newCount);
+		console.log('oldCount : ', oldCount);
+	}
+);
 
 const increaseCounter = (amount, event) => {
 	counterData.count += amount;

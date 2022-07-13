@@ -185,3 +185,112 @@ https://v3-migration.vuejs.org/breaking-changes/filters.html
 
 To achieve the same behaviour or having a "global filter" we are later going to learn about Vue Composables.  
 https://vuejs.org/guide/reusability/composables.html
+
+### Lesson 23 - Watchers
+
+https://vuejs.org/guide/essentials/watchers.html
+
+<strong>Watchers</strong> allow us to watch a reactive data property and then do something whenever it changes - with a callback function.
+
+With Composition API, we can use the `watch()` function to trigger a callback whenever a piece of reactive state changes:
+
+`watch's` first argument can be different types of reactive "sources" - it can be a ref (including computed refs), a reactive object, a getter function, or an array of multiple sources:
+
+```js
+const x = ref(0);
+const y = ref(0);
+
+// single ref
+watch(x, (newX) => {
+	console.log(`x is ${newX}`);
+});
+
+// getter
+watch(
+	() => x.value + y.value,
+	(sum) => {
+		console.log(`sum of x + y is: ${sum}`);
+	}
+);
+
+// array of multiple sources
+watch([x, () => y.value], ([newX, newY]) => {
+	console.log(`x is ${newX} and y is ${newY}`);
+});
+```
+
+`watch's` second argument is the callback function that is run when the first argument changes.
+
+Do note that you can't watch a property of a reactive object like this:
+
+```js
+const obj = reactive({
+	count: 0
+});
+
+// this won't work because we are passing a number to watch()
+watch(obj.count, (count) => {
+	console.log(`count is: ${count}`);
+});
+```
+
+Instead, use a getter:
+
+```js
+// instead, use a getter
+watch(
+	() => obj.count,
+	(count) => {
+		console.log(`count is: ${count}`);
+	}
+);
+```
+
+Coming back to our example, this is quite interesting since `newCount` and `oldCount` are automatically populated with data...
+
+```js
+watch(
+	() => counterData.count,
+	(newCount, oldCount) => {
+		console.log('newCount : ', newCount);
+		console.log('oldCount : ', oldCount);
+	}
+);
+```
+
+...and it turns out this is a
+
+### Deep Watcher
+
+https://vuejs.org/guide/essentials/watchers.html#deep-watchers
+
+When you call `watch()` directly on a reactive object, it will implicitly create a deep watcher - the callback will be triggered on all nested mutations:
+
+```js
+const obj = reactive({ count: 0 });
+
+watch(obj, (newValue, oldValue) => {
+	//
+	// fires on nested property mutations
+	//
+	// Note: `newValue` will be equal to `oldValue` here
+	// because they both point to the same object!
+});
+
+obj.count++;
+```
+
+This should be differentiated with a getter that returns a reactive object - in the latter case, the callback will only fire if the getter returns a different object:
+
+```js
+watch(
+	() => state.someObject,
+	() => {
+		// fires only when state.someObject is replaced
+	}
+);
+```
+
+#### Use with Caution !
+
+> Deep watch requires traversing all nested properties in the watched object, and can be expensive when used on large data structures. Use it only when necessary and beware of the performance implications.
