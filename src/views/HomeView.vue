@@ -37,10 +37,28 @@ export default {
 
 <!-- Composition API -->
 <script>
+import { ref } from 'vue';
+
 export default {
 	setup() {
 		// everything will go inside this setup() function
 		// later we will use the superior script setup
+		//
+		// there are 2 types of reactive data, there are refs and reactive objects
+		//
+		// reactive API LIMITATIONS !!
+		// https://vuejs.org/guide/essentials/reactivity-fundamentals.html#limitations-of-reactive
+		// It only works for object types (objects, arrays, and collection types such as Map and Set).
+		// It cannot hold primitive types such as string, number or boolean.
+		//
+		// for primitive types use ref()
+		//
+		// click on ref to auto import the module like seen here => https://youtu.be/V-kxBWcPJfo?t=799
+		const counter = ref(0);
+
+		return {
+			counter
+		};
 	}
 };
 </script>
