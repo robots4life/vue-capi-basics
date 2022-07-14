@@ -29,7 +29,7 @@
 <!-- SCRIPT SETUP -->
 <!-- There is no need to return the methods or values any more as well ;) -->
 <script setup>
-import { computed, onActivated, onBeforeMount, onBeforeUnmount, onDeactivated, onMounted, onUnmounted, reactive, watch } from 'vue';
+import { computed, onActivated, onBeforeMount, onBeforeUnmount, onBeforeUpdate, onDeactivated, onMounted, onUnmounted, onUpdated, reactive, watch } from 'vue';
 
 // not all data needs to be reactive
 // PERFORMANCE of the APP is IMPROVED for any data variables that are non reactive
@@ -95,6 +95,15 @@ onActivated(() => {
 });
 onDeactivated(() => {
 	console.log('onDeactivated');
+});
+
+//
+// Updated Hooks
+onBeforeUpdate(() => {
+	console.log('onBeforeUpdate');
+});
+onUpdated(() => {
+	console.log('onUpdated');
 });
 </script>
 <style>

@@ -319,7 +319,13 @@ onUnmounted(() => {
 
 https://vuejs.org/api/composition-api-lifecycle.html#onactivated
 
-`onActivated() `
+`onActivated()`
+
+```js
+onActivated(() => {
+	console.log('onActivated');
+});
+```
 
 Registers a callback to be called after the component instance is inserted into the DOM as part of a tree cached by <KeepAlive>.
 
@@ -337,11 +343,19 @@ App.vue
 
 https://vuejs.org/api/composition-api-lifecycle.html#ondeactivated
 
-`onDeactivated() `
+`onDeactivated()`
+
+```js
+onDeactivated(() => {
+	console.log('onDeactivated');
+});
+```
 
 Registers a callback to be called after the component instance is inserted into the DOM as part of a tree cached by <KeepAlive>.
 
 <strong>This hook is not called during server-side rendering.</strong>
+
+App.vue
 
 ```html
 <RouterView v-slot="{ Component }">
@@ -350,3 +364,29 @@ Registers a callback to be called after the component instance is inserted into 
 	</KeepAlive>
 </RouterView>
 ```
+
+### Lesson 27 - Updated Hooks
+
+https://vuejs.org/api/composition-api-lifecycle.html#onbeforeupdate
+
+`onBeforeUpdate()`
+
+```js
+onBeforeUpdate(() => {
+	console.log('onBeforeUpdate');
+});
+```
+
+Registers a hook to be called right before the component is about to update its DOM tree due to a reactive state change.
+
+https://vuejs.org/api/composition-api-lifecycle.html#onupdated
+
+`onUpdated()`
+
+```js
+onUpdated(() => {
+	console.log('onUpdated');
+});
+```
+
+Registers a callback to be called after the component has updated its DOM tree due to a reactive state change.
