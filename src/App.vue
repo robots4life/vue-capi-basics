@@ -3,11 +3,7 @@
 		<RouterLink to="/">Home</RouterLink>
 		<RouterLink to="/about">About</RouterLink>
 	</nav>
-	<RouterView v-slot="{ Component }">
-		<KeepAlive>
-			<component :is="Component" />
-		</KeepAlive>
-	</RouterView>
+	<RouterView />
 </template>
 
 <style>
