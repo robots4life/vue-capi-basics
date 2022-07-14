@@ -29,7 +29,7 @@
 <!-- SCRIPT SETUP -->
 <!-- There is no need to return the methods or values any more as well ;) -->
 <script setup>
-import { computed, reactive, watch } from 'vue';
+import { computed, onActivated, onBeforeMount, onBeforeUnmount, onMounted, onUnmounted, reactive, watch } from 'vue';
 
 // not all data needs to be reactive
 // PERFORMANCE of the APP is IMPROVED for any data variables that are non reactive
@@ -72,6 +72,19 @@ const decreaseCounter = (amount, event) => {
 const resetCounter = () => {
 	counterData.count = 0;
 };
+
+onBeforeMount(() => {
+	console.log('onBeforeMount');
+});
+onMounted(() => {
+	console.log('onMounted');
+});
+onBeforeUnmount(() => {
+	console.log('onBeforeUnmount');
+});
+onUnmounted(() => {
+	console.log('onUnmounted');
+});
 </script>
 <style>
 .home {

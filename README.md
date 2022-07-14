@@ -297,3 +297,20 @@ watch(
 #### Use with Caution !
 
 > Deep watch requires traversing all nested properties in the watched object, and can be expensive when used on large data structures. Use it only when necessary and beware of the performance implications.
+
+### Lesson 25 - Mounted Hooks
+
+```js
+onBeforeMount(() => {
+	console.log('onBeforeMount');
+});
+onMounted(() => {
+	console.log('onMounted');
+});
+onBeforeUnmount(() => {
+	console.log('onBeforeUnmount');
+});
+onUnmounted(() => {
+	console.log('onUnmounted');
+});
+```
