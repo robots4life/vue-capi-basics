@@ -29,7 +29,7 @@
 <!-- SCRIPT SETUP -->
 <!-- There is no need to return the methods or values any more as well ;) -->
 <script setup>
-import { computed, onActivated, onBeforeMount, onBeforeUnmount, onMounted, onUnmounted, reactive, watch } from 'vue';
+import { computed, onActivated, onBeforeMount, onBeforeUnmount, onDeactivated, onMounted, onUnmounted, reactive, watch } from 'vue';
 
 // not all data needs to be reactive
 // PERFORMANCE of the APP is IMPROVED for any data variables that are non reactive
@@ -73,6 +73,8 @@ const resetCounter = () => {
 	counterData.count = 0;
 };
 
+//
+// Mounted Hooks
 onBeforeMount(() => {
 	console.log('onBeforeMount');
 });
@@ -84,6 +86,15 @@ onBeforeUnmount(() => {
 });
 onUnmounted(() => {
 	console.log('onUnmounted');
+});
+
+//
+// Activated Hooks
+onActivated(() => {
+	console.log('onActivated');
+});
+onDeactivated(() => {
+	console.log('onDeactivated');
 });
 </script>
 <style>

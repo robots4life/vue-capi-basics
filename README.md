@@ -314,3 +314,39 @@ onUnmounted(() => {
 	console.log('onUnmounted');
 });
 ```
+
+### Lesson 26 - Activated Hooks
+
+https://vuejs.org/api/composition-api-lifecycle.html#onactivated
+
+`onActivated() `
+
+Registers a callback to be called after the component instance is inserted into the DOM as part of a tree cached by <KeepAlive>.
+
+<strong>This hook is not called during server-side rendering.</strong>
+
+App.vue
+
+```html
+<RouterView v-slot="{ Component }">
+	<KeepAlive>
+		<component :is="Component" />
+	</KeepAlive>
+</RouterView>
+```
+
+https://vuejs.org/api/composition-api-lifecycle.html#ondeactivated
+
+`onDeactivated() `
+
+Registers a callback to be called after the component instance is inserted into the DOM as part of a tree cached by <KeepAlive>.
+
+<strong>This hook is not called during server-side rendering.</strong>
+
+```html
+<RouterView v-slot="{ Component }">
+	<KeepAlive>
+		<component :is="Component" />
+	</KeepAlive>
+</RouterView>
+```
