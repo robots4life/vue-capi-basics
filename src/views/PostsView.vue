@@ -14,3 +14,17 @@
 		</ul>
 	</div>
 </template>
+
+<style>
+.posts {
+	text-align: center;
+	padding: 2rem;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style-type: none;
+}
+</style>

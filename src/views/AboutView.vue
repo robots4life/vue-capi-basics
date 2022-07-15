@@ -12,6 +12,10 @@ import { vAutofocus } from '@/directives/vAutofocus';
 </script>
 
 <style>
+.about {
+	text-align: center;
+	padding: 2rem;
+}
 .edit input {
 	margin-top: 1rem;
 	height: 3rem;
