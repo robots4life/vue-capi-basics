@@ -4,7 +4,7 @@
 // to make the global directive available to other files we "export" it
 export const vAutofocus = {
 	mounted: (element) => {
-		console.log(element);
+		// console.log(element);
 		element.focus();
 	}
 };

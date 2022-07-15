@@ -462,6 +462,15 @@ const myDirective = {
 Import the `vAutofocus` directive from `/src/directives/vAutofocus.js` and use it in the template.
 
 ```js
+export const vAutofocus = {
+	mounted: (element) => {
+		console.log(element);
+		element.focus();
+	}
+};
+```
+
+```js
 import { vAutofocus } from '@/directives/vAutofocus';
 ```
 
