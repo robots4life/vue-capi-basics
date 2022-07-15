@@ -394,3 +394,65 @@ Registers a callback to be called after the component has updated its DOM tree d
 #### Lifecycle
 
 <img src="images/lifecycle-hooks.png" />
+
+### Lesson 30 - Local Custom Directives
+
+Let's create a local custom directive that automatically puts focus to the input element of the counter app once the component is created - so we use the `mounted` lifecycle hook.
+
+https://vuejs.org/guide/reusability/custom-directives.html#custom-directives
+
+In `<script setup>`, any camelCase variable that starts with the "v" prefix can be used as a custom directive.
+
+Here we define the custom directive and
+
+```js
+const vAutofocus = {
+	mounted: (element) => {
+		console.log(element);
+		element.focus();
+	}
+};
+```
+
+Here we insert the custom directive.
+
+```html
+<input type="text" v-autofocus />
+```
+
+Note the `mounted` in the directive object.
+
+https://vuejs.org/guide/reusability/custom-directives.html#directive-hooks
+
+A directive definition object can provide several hook functions (all optional)
+
+```js
+const myDirective = {
+	//
+	// called before bound element's attributes
+	// or event listeners are applied
+	created(el, binding, vnode, prevVnode) {
+		// see below for details on arguments
+	},
+	//
+	// called right before the element is inserted into the DOM.
+	beforeMount() {},
+	//
+	// called when the bound element's parent component
+	// and all its children are mounted.
+	mounted() {},
+	//
+	// called before the parent component is updated
+	beforeUpdate() {},
+	//
+	// called after the parent component and
+	// all of its children have updated
+	updated() {},
+	//
+	// called before the parent component is unmounted
+	beforeUnmount() {},
+	//
+	// called when the parent component is unmounted
+	unmounted() {}
+};
+```

@@ -20,7 +20,7 @@
 		<hr />
 		<div class="edit">
 			<h4>Edit counter title:</h4>
-			<input v-model="counterData.title" type="text" />
+			<input v-model="counterData.title" type="text" v-autofocus />
 		</div>
 	</div>
 </template>
@@ -105,6 +105,17 @@ onBeforeUpdate(() => {
 onUpdated(() => {
 	console.log('onUpdated');
 });
+
+//
+// Directives
+//
+// the name of the custom directive HAS to start with a "v" and then the name of the directive
+const vAutofocus = {
+	mounted: (element) => {
+		console.log(element);
+		element.focus();
+	}
+};
 </script>
 <style>
 .home {
