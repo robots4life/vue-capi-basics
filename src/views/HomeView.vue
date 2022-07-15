@@ -77,39 +77,6 @@ const resetCounter = () => {
 };
 
 //
-// Mounted Hooks
-onBeforeMount(() => {
-	console.log('onBeforeMount');
-});
-onMounted(() => {
-	console.log('onMounted');
-});
-onBeforeUnmount(() => {
-	console.log('onBeforeUnmount');
-});
-onUnmounted(() => {
-	console.log('onUnmounted');
-});
-
-//
-// Activated Hooks
-onActivated(() => {
-	console.log('onActivated');
-});
-onDeactivated(() => {
-	console.log('onDeactivated');
-});
-
-//
-// Updated Hooks
-onBeforeUpdate(() => {
-	console.log('onBeforeUpdate');
-});
-onUpdated(() => {
-	console.log('onUpdated');
-});
-
-//
 // Directives
 //
 // the name of the custom directive HAS to start with a "v" and then the name of the directive
