@@ -1,3 +1,3 @@
 <template>
-	<h1>Posts</h1>
+	<h1>Post Detail</h1>
 </template>
