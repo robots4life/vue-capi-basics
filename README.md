@@ -390,3 +390,7 @@ onUpdated(() => {
 ```
 
 Registers a callback to be called after the component has updated its DOM tree due to a reactive state change.
+
+#### Lifecycle
+
+<img src="images/lifecycle-hooks.png" />
