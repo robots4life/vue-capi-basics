@@ -12,8 +12,13 @@
 </template>
 
 <script setup>
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+
 const showPostId = () => {
 	console.log('showPostId');
+	console.log(`The ID of this post is : ${route.params.id}`);
 };
 </script>
 <style scoped>
