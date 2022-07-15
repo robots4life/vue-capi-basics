@@ -31,6 +31,9 @@
 <script setup>
 import { computed, onActivated, onBeforeMount, onBeforeUnmount, onBeforeUpdate, onDeactivated, onMounted, onUnmounted, onUpdated, reactive, watch } from 'vue';
 
+// import the vAutofocus directive from /src/directives/vAutofocus.js and use it in the template
+import { vAutofocus } from '@/directives/vAutofocus';
+
 // not all data needs to be reactive
 // PERFORMANCE of the APP is IMPROVED for any data variables that are non reactive
 const appTitle = 'My Amazing Counter App';
@@ -110,12 +113,14 @@ onUpdated(() => {
 // Directives
 //
 // the name of the custom directive HAS to start with a "v" and then the name of the directive
-const vAutofocus = {
-	mounted: (element) => {
-		console.log(element);
-		element.focus();
-	}
-};
+//
+// when we import the global directive we do not need to create it here any more
+// const vAutofocus = {
+// 	mounted: (element) => {
+// 		console.log(element);
+// 		element.focus();
+// 	}
+// };
 </script>
 <style>
 .home {

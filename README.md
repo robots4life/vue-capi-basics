@@ -456,3 +456,15 @@ const myDirective = {
 	unmounted() {}
 };
 ```
+
+### Lesson 31 - Global Custom Directives
+
+Import the `vAutofocus` directive from `/src/directives/vAutofocus.js` and use it in the template.
+
+```js
+import { vAutofocus } from '@/directives/vAutofocus';
+```
+
+```html
+<input v-model="counterData.title" type="text" v-autofocus />
+```
