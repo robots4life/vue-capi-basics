@@ -424,7 +424,7 @@ Note the `mounted` in the directive object.
 
 https://vuejs.org/guide/reusability/custom-directives.html#directive-hooks
 
-A directive definition object can provide several hook functions (all optional)
+A directive definition object can provide several hook functions (all optional).
 
 ```js
 const myDirective = {
