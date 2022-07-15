@@ -31,7 +31,13 @@ const showPostId = () => {
 
 const goHomeIn1Seconds = () => {
 	setTimeout(() => {
-		router.push('/');
+		//
+		// router.push('/');
+		//
+		// an alternative to declaring the router path directly is to use the name
+		router.push({
+			name: 'home'
+		});
 	}, 1000);
 };
 </script>
