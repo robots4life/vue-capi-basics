@@ -477,3 +477,5 @@ import { vAutofocus } from '@/directives/vAutofocus';
 ```html
 <input v-model="counterData.title" type="text" v-autofocus />
 ```
+
+### lesson 33 - Router Part 1
