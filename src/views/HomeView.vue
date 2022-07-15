@@ -29,7 +29,7 @@
 <!-- SCRIPT SETUP -->
 <!-- There is no need to return the methods or values any more as well ;) -->
 <script setup>
-import { computed, onActivated, onBeforeMount, onBeforeUnmount, onBeforeUpdate, onDeactivated, onMounted, onUnmounted, onUpdated, reactive, watch } from 'vue';
+import { computed, reactive, watch } from 'vue';
 
 // import the vAutofocus directive from /src/directives/vAutofocus.js and use it in the template
 import { vAutofocus } from '@/directives/vAutofocus';
