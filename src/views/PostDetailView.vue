@@ -5,19 +5,25 @@
 			Display the content of post with ID of <strong>{{ $route.params.id }}</strong> here !
 		</p>
 		<hr />
-		<button @click="showPostId" class="btn">Show Post ID</button>
+		<button @click="showPostId" class="btn">Toggle Show / Hide Post ID</button>
+		<div v-if="showId" class="post-id">
+			<p>Post ID : {{ $route.params.id }}</p>
+		</div>
 		<hr />
 		<RouterLink to="/posts">&lt;&lt; Back</RouterLink>
 	</div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
 
+let showId = ref(false);
+
 const showPostId = () => {
-	console.log('showPostId');
+	showId.value = !showId.value;
 	console.log(`The ID of this post is : ${route.params.id}`);
 };
 </script>
@@ -35,5 +41,8 @@ const showPostId = () => {
 hr {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
+}
+.post-id {
+	padding: 1rem;
 }
 </style>
