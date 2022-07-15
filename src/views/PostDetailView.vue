@@ -13,6 +13,7 @@
 		<button class="btn" @click="goHomeIn1Seconds">Go Home in 1 Second</button>
 		<hr />
 		<button class="btn" @click="gotoFirstPost">Go To First Post</button>
+		<hr />
 		<RouterLink to="/posts">&lt;&lt; Back</RouterLink>
 	</div>
 </template>
