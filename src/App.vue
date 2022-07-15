@@ -15,7 +15,7 @@
 	padding: 2rem;
 
 	font-weight: normal;
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
 header {

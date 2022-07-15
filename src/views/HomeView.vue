@@ -129,7 +129,7 @@ onUpdated(() => {
 }
 .btn,
 .counter {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	padding: 2rem;
 	margin-left: 1rem;
 	margin-right: 1rem;
@@ -141,7 +141,7 @@ hr {
 .edit input {
 	margin-top: 1rem;
 	height: 3rem;
-	font-size: 3rem;
+	font-size: 1.5rem;
 	padding-top: 3rem;
 	padding-bottom: 3rem;
 	padding-left: 1rem;
