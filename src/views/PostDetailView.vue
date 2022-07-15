@@ -10,21 +10,29 @@
 			<p>Post ID : {{ $route.params.id }}</p>
 		</div>
 		<hr />
+		<button class="btn" @click="goHomeIn1Seconds">Go Home in 1 Second</button>
 		<RouterLink to="/posts">&lt;&lt; Back</RouterLink>
 	</div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
+const router = useRouter();
 
 let showId = ref(false);
 
 const showPostId = () => {
 	showId.value = !showId.value;
 	console.log(`The ID of this post is : ${route.params.id}`);
+};
+
+const goHomeIn1Seconds = () => {
+	setTimeout(() => {
+		router.push('/');
+	}, 1000);
 };
 </script>
 <style scoped>
