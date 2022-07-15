@@ -44,5 +44,8 @@ hr {
 }
 .post-id {
 	padding: 1rem;
+	margin-top: 1rem;
+	border: 1px solid black;
+	text-align: center;
 }
 </style>
