@@ -11,6 +11,8 @@
 		</div>
 		<hr />
 		<button class="btn" @click="goHomeIn1Seconds">Go Home in 1 Second</button>
+		<hr />
+		<button class="btn" @click="gotoFirstPost">Go To First Post</button>
 		<RouterLink to="/posts">&lt;&lt; Back</RouterLink>
 	</div>
 </template>
@@ -39,6 +41,15 @@ const goHomeIn1Seconds = () => {
 			name: 'home'
 		});
 	}, 1000);
+};
+
+const gotoFirstPost = () => {
+	router.push({
+		name: 'post',
+		params: {
+			id: 'id1'
+		}
+	});
 };
 </script>
 <style scoped>
