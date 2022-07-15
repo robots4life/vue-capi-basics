@@ -11,7 +11,7 @@
 import { vAutofocus } from '@/directives/vAutofocus';
 </script>
 
-<style>
+<style scoped>
 .about {
 	text-align: center;
 	padding: 2rem;

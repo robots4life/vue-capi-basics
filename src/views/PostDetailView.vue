@@ -4,7 +4,7 @@
 	</div>
 </template>
 
-<style>
+<style scoped>
 .post {
 	text-align: center;
 	padding: 2rem;

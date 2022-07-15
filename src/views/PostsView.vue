@@ -15,7 +15,7 @@
 	</div>
 </template>
 
-<style>
+<style scoped>
 .posts {
 	text-align: center;
 	padding: 2rem;

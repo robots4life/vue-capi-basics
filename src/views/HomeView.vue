@@ -89,7 +89,7 @@ const resetCounter = () => {
 // 	}
 // };
 </script>
-<style>
+<style scoped>
 .home {
 	text-align: center;
 	padding: 2rem;
