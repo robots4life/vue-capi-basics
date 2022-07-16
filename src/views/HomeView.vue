@@ -2,7 +2,7 @@
 	<div class="home">
 		<h1>Home</h1>
 
-		<h2>{{ appTitle }}</h2>
+		<h2 ref="appTitleRef">{{ appTitle }}</h2>
 
 		<h3>{{ counterData.title }}</h3>
 
@@ -29,7 +29,7 @@
 <!-- SCRIPT SETUP -->
 <!-- There is no need to return the methods or values any more as well ;) -->
 <script setup>
-import { computed, reactive, watch } from 'vue';
+import { computed, onMounted, reactive, ref, watch } from 'vue';
 
 // import the vAutofocus directive from /src/directives/vAutofocus.js and use it in the template
 import { vAutofocus } from '@/directives/vAutofocus';
@@ -88,6 +88,14 @@ const resetCounter = () => {
 // 		element.focus();
 // 	}
 // };
+
+// Template Ref - appTitleRef
+const appTitleRef = ref(null);
+
+onMounted(() => {
+	console.log(appTitleRef.value);
+	console.log(appTitleRef.value.offsetWidth);
+});
 </script>
 <style scoped>
 .home {

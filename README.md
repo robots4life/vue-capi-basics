@@ -549,3 +549,20 @@ app.mount('#app');
 Finally, create the Views in `src/views/`.
 
 <img src="images/lesson-35-views.png" />
+
+### Lesson 39 - Template Ref
+
+```html
+<h2 ref="appTitleRef">{{ appTitle }}</h2>
+```
+
+```js
+const appTitleRef = ref(null);
+
+onMounted(() => {
+	console.log(appTitleRef.value);
+	console.log(appTitleRef.value.offsetWidth);
+});
+```
+
+<img src="images/lesson-39-template-ref-h2.png" />
