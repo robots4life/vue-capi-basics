@@ -1,8 +1,8 @@
 <template>
 	<div class="modals">
 		<h1>Modals</h1>
-		<button class="btn">Show Modal</button>
-		<div class="modal">
+		<button class="btn" @click="showModal = !showModal">Show Modal</button>
+		<div class="modal" v-if="showModal">
 			<h1>This Is Our Modal</h1>
 			<h2>Oh This Is Amazing</h2>
 			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed at nostrum ipsam hic numquam! Animi impedit inventore qui minima voluptas error nisi fuga, nemo debitis, quibusdam, in corrupti eius porro facilis. Omnis cupiditate, error rem alias temporibus modi qui officia!</p>
@@ -12,6 +12,12 @@
 		</div>
 	</div>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+
+const showModal = ref(false);
+</script>
 
 <style scoped>
 .modals {
