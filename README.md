@@ -573,7 +573,9 @@ https://vuejs.org/api/general.html#nexttick
 
 A utility for waiting for the next DOM update flush.
 
-`nextTick` allows us to wait until the DOM has updated and then do something. It will wait for all changes to the DOM and then run a callback function.
+`nextTick`allows us to wait until the DOM has updated and then do something. It will wait for all changes to the DOM and then run a callback function.
+
+`nextTick` waits for the next change to the view. This could be many different things, e.g. a dialog appears, a button appears, some text changes etc. Basically any change to the view which is caused by Vue.
 
 ```js
 const increaseCounter = (amount, event) => {
