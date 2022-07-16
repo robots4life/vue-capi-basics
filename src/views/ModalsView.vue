@@ -35,5 +35,11 @@ const showModal = ref(false);
 	border: 10px solid midnightblue;
 	border-radius: 15%;
 	padding: 2rem;
+	/* full screen modal */
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
 }
 </style>
