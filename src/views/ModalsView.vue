@@ -2,7 +2,7 @@
 	<div class="modals">
 		<h1>Modals</h1>
 		<button @click="showModal = !showModal" class="btn">Toggle Modal</button>
-		<teleport>
+		<teleport to="body">
 			<div class="modal" v-if="showModal">
 				<h1>This Is Our Modal</h1>
 				<h2>Oh This Is Amazing</h2>
@@ -35,7 +35,6 @@ const showModal = ref(false);
 .modal {
 	background-color: aquamarine;
 	border: 10px solid midnightblue;
-	border-radius: 15%;
 	padding: 2rem;
 	/* full screen modal */
 	position: absolute;
@@ -44,5 +43,12 @@ const showModal = ref(false);
 	top: 0;
 	left: 0;
 	z-index: 1;
+	font-size: 1.5rem;
+	text-align: center;
+}
+.modal p,
+.modal h1,
+.modal h2 {
+	padding-bottom: 1.5rem;
 }
 </style>
