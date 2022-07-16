@@ -616,3 +616,7 @@ async function increment() {
 	<button id="counter" @click="increment">{{ count }}</button>
 </template>
 ```
+
+### Lesson 41 - Teleport
+
+Teleport allows us to move elements in the DOM.
