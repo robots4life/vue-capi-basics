@@ -566,3 +566,51 @@ onMounted(() => {
 ```
 
 <img src="images/lesson-39-template-ref-h2.png" />
+
+### Lesson 40 - nextTick
+
+https://vuejs.org/api/general.html#nexttick
+
+A utility for waiting for the next DOM update flush.
+
+`nextTick` allows us to wait until the DOM has updated and then do something. It will wait for all changes to the DOM and then run a callback function.
+
+```js
+const increaseCounter = (amount, event) => {
+	counterData.count += amount;
+	console.log(event);
+	//
+	// nextTick
+	//
+	nextTick(() => {
+		console.log('Do something when counter had updated in the DOM');
+	});
+};
+```
+
+<strong>Note</strong> - `nextTick` is asynchronous so can also be called like this.
+
+```js
+<script setup>
+import { ref, nextTick } from 'vue'
+
+const count = ref(0)
+
+async function increment() {
+  count.value++
+
+  // DOM not yet updated
+  console.log(document.getElementById('counter').textContent) // 0
+
+  await nextTick()
+  // DOM is now updated
+  console.log(document.getElementById('counter').textContent) // 1
+}
+</script>
+```
+
+```html
+<template>
+	<button id="counter" @click="increment">{{ count }}</button>
+</template>
+```

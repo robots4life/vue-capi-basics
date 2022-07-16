@@ -29,7 +29,7 @@
 <!-- SCRIPT SETUP -->
 <!-- There is no need to return the methods or values any more as well ;) -->
 <script setup>
-import { computed, onMounted, reactive, ref, watch } from 'vue';
+import { computed, nextTick, onMounted, reactive, ref, watch } from 'vue';
 
 // import the vAutofocus directive from /src/directives/vAutofocus.js and use it in the template
 import { vAutofocus } from '@/directives/vAutofocus';
@@ -65,6 +65,12 @@ watch(
 const increaseCounter = (amount, event) => {
 	counterData.count += amount;
 	console.log(event);
+	//
+	// nextTick
+	//
+	nextTick(() => {
+		console.log('Do something when counter had updated in the DOM');
+	});
 };
 
 const decreaseCounter = (amount, event) => {
