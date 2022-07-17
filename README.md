@@ -633,3 +633,57 @@ https://vuejs.org/guide/built-ins/teleport.html#basic-usage
 	</div>
 </teleport>
 ```
+
+### Lesson 44 - Child Components
+
+https://vuejs.org/guide/essentials/component-basics.html
+
+```js
+<script setup>import ButtonCounter from './ButtonCounter.vue'</script>
+```
+
+```html
+<template>
+	<h1>Here is a child component!</h1>
+	<ButtonCounter />
+</template>
+```
+
+Modal
+
+`src/views/ModalsView.vue`
+
+```js
+<template>
+	<div class="modals">
+		<h1>Modals</h1>
+		<button @click="showModal = !showModal" class="btn">Toggle Modal</button>
+		<Modal v-if="showModal"></Modal>
+	</div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+import Modal from '../components/Modal.vue';
+const showModal = ref(false);
+</script>
+```
+
+`src/views/ModalsView.vue`
+
+```html
+<template>
+	<teleport to="body">
+		<div class="modal">
+			<h1>This Is Our Modal</h1>
+			<h2>Oh This Is Amazing</h2>
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed at nostrum ipsam hic numquam! Animi impedit inventore qui minima voluptas error nisi fuga, nemo debitis, quibusdam, in corrupti eius porro facilis. Omnis cupiditate, error rem alias temporibus modi qui officia!</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quasi, earum minima quibusdam deleniti saepe ipsam accusamus recusandae at quos.</p>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem quod, dolorem, odio unde maxime eius illo facere voluptatum repellat porro voluptate? Architecto, fugit! Consectetur officiis error facere eaque fugit cum, molestias tenetur voluptatum, itaque rem possimus deleniti placeat dicta exercitationem laudantium? Modi inventore quis, omnis dolorem illo natus explicabo nemo provident commodi, nobis pariatur amet, iure sunt dignissimos voluptatibus corrupti.</p>
+			<button class="btn">Hide Modal</button>
+		</div>
+	</teleport>
+</template>
+```
+
+_hide button not working_
