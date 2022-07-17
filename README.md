@@ -687,3 +687,49 @@ const showModal = ref(false);
 ```
 
 _hide button not working_
+
+### Lesson 45 - Performance : Import All Views In Router
+
+```js
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import AboutView from '../views/AboutView.vue';
+import PostsView from '../views/PostsView.vue';
+import PostDetailView from '../views/PostDetailView.vue';
+import ModalsView from '../views/ModalsView.vue';
+
+const router = createRouter({
+	history: createWebHistory(import.meta.env.BASE_URL),
+	routes: [
+		{
+			path: '/',
+			name: 'home',
+			component: HomeView
+		},
+		{
+			path: '/about',
+			name: 'about',
+			component: AboutView
+		},
+		{
+			path: '/posts',
+			name: 'posts',
+			component: PostsView
+		},
+		{
+			path: '/post/:id',
+			name: 'post',
+			component: PostDetailView
+		},
+		{
+			path: '/modals',
+			name: 'modals',
+			component: ModalsView
+		}
+	]
+});
+
+export default router;
+```
+
+The `Modal` child component takes a while to load sometimes. To remedy all Views are imported in the router. This increases the performance when loading the element.
