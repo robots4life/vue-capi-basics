@@ -620,3 +620,16 @@ async function increment() {
 ### Lesson 41 - Teleport
 
 Teleport allows us to move elements in the DOM.
+
+Add a modal to the body element.
+
+https://vuejs.org/guide/built-ins/teleport.html#basic-usage
+
+```html
+<teleport to="body">
+	<div v-if="showModal" class="modal">
+		<h1>This Is Our Modal</h1>
+		<button @click="showModal = false" class="btn">Hide Modal</button>
+	</div>
+</teleport>
+```

@@ -19,11 +19,6 @@
 import { ref } from 'vue';
 
 const showModal = ref(false);
-
-//
-// instead of all this just read the docs and add the modal to the body element instead of first setting a class on the body !!
-//
-// https://vuejs.org/guide/built-ins/teleport.html#basic-usage
 </script>
 
 <style scoped>
