@@ -4,18 +4,11 @@
 			<h1>This Is Our Modal</h1>
 			<h1><slot name="data" /></h1>
 			<slot />
-			<pre>{{ $slots.data() }}</pre>
-
 			<button class="btn">Hide Modal</button>
 		</div>
 	</teleport>
 </template>
 
-<script setup>
-import { useSlots } from 'vue';
-const slots = useSlots();
-console.log(slots.data());
-</script>
 <style scoped>
 .modals {
 	text-align: center;
