@@ -1,8 +1,8 @@
 <template>
 	<div class="modals">
 		<h1>Modals</h1>
-		<button @click="showModalWithBodyClass" class="btn">Toggle Modal</button>
-		<!-- <button @click="showModal = !showModal" class="btn">Toggle Modal</button> -->
+		<!-- <button @click="showModalWithBodyClass" class="btn">Toggle Modal</button> -->
+		<button @click="showModal = !showModal" class="btn">Toggle Modal</button>
 		<!-- add modals container to the element in the app with the modals-container class
              in this case the body element -->
 		<teleport to="body">
@@ -23,53 +23,10 @@ import { ref } from 'vue';
 
 const showModal = ref(false);
 
-// const modal = reactive({
-// 	active: false
-// });
-
-const showModalWithBodyClass = () => {
-	console.log('modal button clicked');
-	// modal.active = !modal.active;
-	showModal.value = !showModal.value;
-};
-
 //
 // instead of all this just read the docs and add the modal to the body element instead of first setting a class on the body !!
 //
 // https://vuejs.org/guide/built-ins/teleport.html#basic-usage
-
-// Watcher
-// watch(
-// 	() => modal.active,
-// 	(active, oldState) => {
-// 		console.log('active : ', active);
-// 		console.log('oldState : ', oldState);
-// 	}
-// );
-
-// watch(
-// 	() => modal.active,
-// 	(active, oldState) => {
-// 		console.log('active : ', active);
-// 		console.log('oldState : ', oldState);
-
-// 		if (active) {
-// 			console.log('modal');
-// 			document.body.classList.add('modals-container');
-// 			// modal.active = true;
-// 			nextTick(() => {
-// 				console.log('Do something when the class has been added to the body element');
-// 				showModal.value = true;
-// 			});
-// 		}
-// 		if (oldState) {
-// 			console.log('modal');
-// 			// modal.active = false;
-// 			showModal.value = false;
-// 			document.body.classList.remove('modals-container');
-// 		}
-// 	}
-// );
 </script>
 
 <style scoped>
