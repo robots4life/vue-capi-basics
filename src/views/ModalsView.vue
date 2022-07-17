@@ -1,10 +1,7 @@
 <template>
 	<div class="modals">
 		<h1>Modals</h1>
-		<!-- <button @click="showModalWithBodyClass" class="btn">Toggle Modal</button> -->
 		<button @click="showModal = !showModal" class="btn">Toggle Modal</button>
-		<!-- add modals container to the element in the app with the modals-container class
-             in this case the body element -->
 		<teleport to="body">
 			<div v-if="showModal" class="modal">
 				<h1>This Is Our Modal</h1>
