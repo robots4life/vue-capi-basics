@@ -19,11 +19,52 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { reactive, ref, watch, nextTick } from 'vue';
 
 const showModal = ref(false);
 
-const showModalWithBodyClass = () => {};
+const modal = reactive({
+	active: false
+	// title: 'My Counter'
+});
+
+const showModalWithBodyClass = () => {
+	console.log('modal button clicked');
+	modal.active = !modal.active;
+};
+
+// Watcher
+// watch(
+// 	() => modal.active,
+// 	(active, oldState) => {
+// 		console.log('active : ', active);
+// 		console.log('oldState : ', oldState);
+// 	}
+// );
+
+watch(
+	() => modal.active,
+	(active, oldState) => {
+		console.log('active : ', active);
+		console.log('oldState : ', oldState);
+
+		if (active) {
+			console.log('modal');
+			document.body.classList.add('modals-container');
+			// modal.active = true;
+			nextTick(() => {
+				console.log('Do something when the class has been added to the body element');
+				showModal.value = true;
+			});
+		}
+		if (oldState) {
+			console.log('modal');
+			// modal.active = false;
+			showModal.value = false;
+			document.body.classList.remove('modals-container');
+		}
+	}
+);
 </script>
 
 <style scoped>
