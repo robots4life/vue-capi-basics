@@ -756,7 +756,7 @@ Put content inside the `<Model></Model> child component.
 
 `src/views/ModalsView.vue`
 
-````html
+```html
 <Modal v-if="showModal">
 	<h2>Oh This Is Amazing</h2>
 	<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed at nostrum ipsam hic numquam! Animi impedit inventore qui minima voluptas error nisi fuga, nemo debitis, quibusdam, in corrupti eius porro facilis. Omnis cupiditate, error rem alias temporibus modi qui officia!</p>
@@ -764,4 +764,29 @@ Put content inside the `<Model></Model> child component.
 	<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem quod, dolorem, odio unde maxime eius illo facere voluptatum repellat porro voluptate? Architecto, fugit! Consectetur officiis error facere eaque fugit cum, molestias tenetur voluptatum, itaque rem possimus deleniti placeat dicta exercitationem laudantium? Modi inventore quis, omnis dolorem illo natus explicabo nemo provident commodi, nobis pariatur amet, iure sunt dignissimos voluptatibus corrupti.</p>
 </Modal>
 ```
-````
+
+Acces slot internal data.
+
+Give the slot a name.
+
+`src/views/ModalsView.vue`
+
+```hrml
+<template v-slot:data>New Title</template>
+```
+
+`src/components/Modal.vue`
+
+```html
+<h1>
+	<slot name="data" />
+</h1>
+<slot />
+<pre>{{ $slots.data() }}</pre>
+```
+
+```js
+import { useSlots } from 'vue';
+const slots = useSlots();
+console.log(slots.data());
+```
