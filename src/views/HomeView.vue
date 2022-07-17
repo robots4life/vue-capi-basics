@@ -69,7 +69,7 @@ const increaseCounter = (amount, event) => {
 	// nextTick
 	//
 	nextTick(() => {
-		console.log('Do something when counter had updated in the DOM');
+		console.log('Do something when counter has updated in the DOM');
 	});
 };
 
