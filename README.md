@@ -790,3 +790,5 @@ import { useSlots } from 'vue';
 const slots = useSlots();
 console.log(slots.data());
 ```
+
+### Lesson 47 - Props
